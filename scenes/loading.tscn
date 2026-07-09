@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cqt5of5uati5n"]
+
+[ext_resource type="Script" uid="uid://bwd8sds8b5j1b" path="res://scripts/loading.gd" id="1_yc7uc"]
+[ext_resource type="FontFile" uid="uid://bhwlfqy5pxc2e" path="res://assets/fonts/Market_Deco.ttf" id="2_dhqfv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_101rs"]
+font = ExtResource("2_dhqfv")
+font_size = 50
+
+[node name="Loading" type="Control" unique_id=481159361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yc7uc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2072610357]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=268827660]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -82.5
+offset_right = 469.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOADING"
+label_settings = SubResource("LabelSettings_101rs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=364533958]
+wait_time = 0.5
+autostart = true

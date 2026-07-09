@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bbtxqp8f4c3b1"]
+
+[ext_resource type="Script" uid="uid://doxqo17w2y81c" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="FontFile" uid="uid://jxwq0r3btgd1" path="res://assets/fonts/Messages.ttf" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://bhwlfqy5pxc2e" path="res://assets/fonts/Market_Deco.ttf" id="2_bqqt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("1_ekxnf")
+font_size = 150
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.16086814, 0.1608682, 0.16086805, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MainMenu" type="Control" unique_id=1673635482]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2034539569]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=479541028]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.5
+offset_top = -260.0
+offset_right = 479.5
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fog of Mirsharai"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1026996282]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -44.0
+offset_right = 175.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="start_btn" type="Button" parent="VBoxContainer" unique_id=34540664]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+text = "Start game"
+
+[node name="settings_btn" type="Button" parent="VBoxContainer" unique_id=1277561821]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+text = "Settings"
+
+[node name="exit_btn" type="Button" parent="VBoxContainer" unique_id=1621924762]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings_btn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit_btn" to="." method="_on_exit_btn_pressed"]

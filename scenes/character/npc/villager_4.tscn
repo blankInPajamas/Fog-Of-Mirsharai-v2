@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bqxu5kf2a4blb"]
+
+[ext_resource type="Script" uid="uid://3joy2tcb3lq7" path="res://scripts/character/npc/villager_4.gd" id="1_68nkp"]
+[ext_resource type="Texture2D" uid="uid://d7srfhjy8mcy" path="res://assets/ninja/character/Villager4/SeparateAnim/Idle.png" id="1_ceqnu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
+size = Vector2(20, 42)
+
+[node name="villager4" type="CharacterBody2D" unique_id=267873462]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("1_68nkp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
+texture = ExtResource("1_ceqnu")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30084036]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_hpmr0")
+
+[node name="interact_detection" type="Area2D" parent="." unique_id=85219839]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_5udq3")
+
+[connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
+[connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]
