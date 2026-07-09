@@ -15,6 +15,9 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(3.0).timeout
 	
+	TransitionScene.transition()
+	await TransitionScene.on_transition_finished
+	
 	swap_scenes()
 
 func swap_scenes() -> void:

@@ -74,5 +74,9 @@ func scroll_to_bottom() -> void:
 func end_story_sequence() -> void:
 	story_label.text = ""
 	Global.TARGET_PATH = 'res://scenes/main.tscn'
+	
+	TransitionScene.transition()
+	await TransitionScene.on_transition_finished
+	
 	get_tree().change_scene_to_file("res://scenes/loading.tscn")
 	print("Introduction finished!")
