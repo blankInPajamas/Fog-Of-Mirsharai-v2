@@ -50,7 +50,6 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="primary_panel" type="Control" parent="." unique_id=1021213078]
-visible = false
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -91,6 +90,7 @@ theme_override_constants/separation = 15
 [node name="start_btn" type="Button" parent="primary_panel/VBoxContainer" unique_id=34540664]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
@@ -99,6 +99,7 @@ text = "Start game"
 [node name="settings_btn" type="Button" parent="primary_panel/VBoxContainer" unique_id=1277561821]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
@@ -107,12 +108,14 @@ text = "Settings"
 [node name="exit_btn" type="Button" parent="primary_panel/VBoxContainer" unique_id=1621924762]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 text = "Exit"
 
 [node name="settings_panel" type="Control" parent="." unique_id=834274688]
+visible = false
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -125,9 +128,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -300.0
+offset_top = -308.0
 offset_right = 250.0
-offset_bottom = 300.0
+offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bqqt6")
@@ -150,7 +153,7 @@ label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settings_btn" type="Button" parent="settings_panel/Panel" unique_id=2020394655]
+[node name="back_btn" type="Button" parent="settings_panel/Panel" unique_id=2020394655]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 1
 anchors_preset = 7
@@ -200,3 +203,4 @@ layout_mode = 2
 [connection signal="pressed" from="primary_panel/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="primary_panel/VBoxContainer/settings_btn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="primary_panel/VBoxContainer/exit_btn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="settings_panel/Panel/back_btn" to="." method="_on_back_btn_pressed"]

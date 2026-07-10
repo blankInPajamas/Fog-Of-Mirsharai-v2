@@ -5,11 +5,14 @@ extends Control
 - Make the title and btns appear through transition
 '''
 
+@onready var settings_panel: Control = $settings_panel
 @onready var title_game: Label = $primary_panel/Label
+@onready var primary_panel: Control = $primary_panel
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	settings_panel.visible = false
+	primary_panel.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,4 +32,10 @@ func _on_start_btn_pressed() -> void:
 
 
 func _on_settings_btn_pressed() -> void:
-	pass # Replace with function body.
+	primary_panel.visible = false
+	settings_panel.visible = true
+
+
+func _on_back_btn_pressed() -> void:
+	settings_panel.visible = false
+	primary_panel.visible = true
