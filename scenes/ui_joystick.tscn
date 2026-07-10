@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://5o3wnn1xkvne"]
+
+[ext_resource type="Texture2D" uid="uid://d24q6iaome0tc" path="res://assets/ui/button_xboxone_dpad_dark_7.png" id="1_rih75"]
+[ext_resource type="Texture2D" uid="uid://bglc2hx5u55i4" path="res://assets/ui/button_xboxone_dpad_light_1.png" id="2_f0ebb"]
+[ext_resource type="Texture2D" uid="uid://bby0e8f3qh612" path="res://assets/ui/button_xboxone_dpad_light_3.png" id="3_3gd4p"]
+[ext_resource type="Texture2D" uid="uid://c6qokc8fk876j" path="res://assets/ui/button_xboxone_dpad_light_4.png" id="4_agh6t"]
+[ext_resource type="Texture2D" uid="uid://bvnh3dp88nuff" path="res://assets/ui/button_xboxone_dpad_light_2.png" id="5_wypkr"]
+[ext_resource type="Texture2D" uid="uid://fp1gmoxqoyp0" path="res://assets/ui/button_xbox_digital_a_10.png" id="6_nld05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rih75"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0ebb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gd4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agh6t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wypkr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nld05"]
+
+[node name="UI_Joystick" type="CanvasLayer" unique_id=595946383]
+
+[node name="pad_img" type="Control" parent="." unique_id=344635939]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="basepad" type="TextureRect" parent="pad_img" unique_id=1952740220]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 430.0
+offset_right = 574.0
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rih75")
+expand_mode = 1
+
+[node name="basepad_up" type="TextureRect" parent="pad_img" unique_id=408506822]
+visible = false
+layout_mode = 0
+offset_left = 94.0
+offset_top = 411.0
+offset_right = 574.0
+offset_bottom = 891.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_f0ebb")
+expand_mode = 1
+
+[node name="basepad_down" type="TextureRect" parent="pad_img" unique_id=479898634]
+visible = false
+layout_mode = 0
+offset_left = 94.0
+offset_top = 450.0
+offset_right = 574.0
+offset_bottom = 930.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3gd4p")
+expand_mode = 1
+
+[node name="basepad_left" type="TextureRect" parent="pad_img" unique_id=543731430]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 430.0
+offset_right = 554.0
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_agh6t")
+expand_mode = 1
+
+[node name="basepad_right" type="TextureRect" parent="pad_img" unique_id=198969407]
+visible = false
+layout_mode = 0
+offset_left = 114.0
+offset_top = 430.0
+offset_right = 594.0
+offset_bottom = 910.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_wypkr")
+expand_mode = 1
+
+[node name="btn_a" type="TextureRect" parent="pad_img" unique_id=1216930609]
+layout_mode = 0
+offset_left = 978.99994
+offset_top = 453.99997
+offset_right = 1459.0
+offset_bottom = 934.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nld05")
+
+[node name="btn_group" type="Control" parent="." unique_id=1601753716]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="btn_group" unique_id=1853969492]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 371.0
+offset_right = 254.0
+offset_bottom = 521.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
+
+[node name="Button2" type="Button" parent="btn_group" unique_id=887784571]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 573.0
+offset_right = 254.0
+offset_bottom = 693.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
+
+[node name="Button4" type="Button" parent="btn_group" unique_id=883905231]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 509.0
+offset_right = 404.0
+offset_bottom = 589.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
+
+[node name="Button5" type="Button" parent="btn_group" unique_id=1693479860]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 509.0
+offset_right = 174.0
+offset_bottom = 589.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
+
+[node name="Button3" type="Button" parent="btn_group" unique_id=846809512]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 449.0
+offset_right = 1173.0
+offset_bottom = 649.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_agh6t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wypkr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nld05")

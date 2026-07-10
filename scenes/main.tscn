@@ -2182,6 +2182,7 @@ tile_map_data = PackedByteArray("AAAHAAwAAAAAAAMAAAAIAAwAAAABAAMAAAAJAAwAAAABAAM
 tile_set = SubResource("TileSet_5he1u")
 
 [node name="zahra" parent="." unique_id=267873462 groups=["zahra"] instance=ExtResource("13_trceg")]
+visible = false
 position = Vector2(0, -96.999985)
 scale = Vector2(1.2049414, 1.2049414)
 

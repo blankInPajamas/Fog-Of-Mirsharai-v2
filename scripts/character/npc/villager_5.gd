@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Villager
 
 func _on_interact_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group('zahra'):
