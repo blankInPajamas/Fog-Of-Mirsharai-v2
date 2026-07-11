@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnyw5gevjaml5" path="res://scripts/character/npc/villager_1.gd" id="1_461j4"]
 [ext_resource type="Texture2D" uid="uid://d280485gyf41v" path="res://assets/ninja/character/Villager1/SeparateAnim/Idle.png" id="2_2boho"]
+[ext_resource type="Resource" uid="uid://ch7qcd7cpa2ov" path="res://styles/farhan.dch" id="2_5udq3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
 radius = 6.0
@@ -10,9 +11,14 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
 size = Vector2(20, 42)
 
-[node name="villager1" type="CharacterBody2D" unique_id=267873462]
+[node name="villager1_farhan" type="CharacterBody2D" unique_id=267873462]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_461j4")
+dialogic_character = ExtResource("2_5udq3")
+char_name = "Farhan Ishraq"
+initial_dialogue = "...Zahra. It's been a long time. I don't— look, I can't really talk right now, alright? Everyone's already looking at me like I did something. My own uncle. I just got back to this town a few months ago and now this happens. Great timing, right?"
+dialogue_lines = Array[String](["You think I don't know what people are saying? 'The nephew comes back, and suddenly Chacha's dead and the land's up for grabs.' I loved him, whatever anyone thinks. I just— I made a mistake. That's all I'm saying right now.", "That cloth... that's from my sleeve, isn't it. Okay. Okay, listen — I let someone into the shrine that night. He said he just wanted to look at the amulet up close, said he was writing about local heirlooms for some collector's journal, I don't know, I believed him. I didn't think— I never thought Chacha would even be there that late. When he came out and started shouting I panicked and ran. I didn't touch him, Zahra, I swear on everything, I didn't touch him.", "Fine. Fine! His name is Anwar. He offered me half of whatever it sold for — said Chacha would never even notice it gone for a few weeks, said he had a buyer already lined up. I said yes because I was angry, because I thought I deserved something after everyone forgot about me for ten years. I never wanted him dead. You have to believe that."])
+motive = "Resentment over inheritance and years of family distance made him an easy accomplice for Anwar — he let Anwar into the shrine and has been silenced by guilt and threats since, but did not commit the killing."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
 texture = ExtResource("2_2boho")
@@ -28,6 +34,9 @@ shape = SubResource("CapsuleShape2D_hpmr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5udq3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=269735512]
+position = Vector2(0, -4.8)
 
 [connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
 [connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]

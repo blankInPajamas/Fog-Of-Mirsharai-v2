@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpa52afqeu0vk" path="res://scripts/character/npc/villager_2.gd" id="1_cf6yn"]
 [ext_resource type="Texture2D" uid="uid://ls673ikp00ee" path="res://assets/ninja/character/Villager3/SeparateAnim/Idle.png" id="1_r6coi"]
+[ext_resource type="Resource" uid="uid://dskc1lgupeplf" path="res://styles/nasrin.dch" id="2_af8s5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
 radius = 6.0
@@ -10,9 +11,14 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
 size = Vector2(20, 42)
 
-[node name="villager2" type="CharacterBody2D" unique_id=267873462]
+[node name="villager2_nasrin" type="CharacterBody2D" unique_id=267873462]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_cf6yn")
+dialogic_character = ExtResource("2_af8s5")
+char_name = "Nasrin Begum"
+initial_dialogue = "Come in, come in, sit — you look thin, city hasn't been feeding you. Terrible business with Rafiq Bhai. Terrible. I heard it from the milkman before the sun was even up. I was home all night, same as always. Poor old man"
+dialogue_lines = Array[String](["Why do you keep looking at me like that? ...Fine. I wasn't home the whole night. I went out for a little while. A woman my age, walking alone after dark — you know how tongues wag here, Zahra. That's all I'll say.", "You're not going to let this go, are you. Alright. I was bringing food up near the shrine — for Rafiq, he never ate properly since his wife passed. I saw two shapes running down the path, away from the steps. It was dark, I couldn't tell you faces. One was tall. A stranger's build, if I had to guess. I've been afraid to say anything because everyone will ask why I was out there at all."])
+motive = "Was seen near the shrine the night of the murder and initially concealed it; true reason was personal — she cared for Rafiq and feared the social cost of admitting she was out alone at night. Key eyewitness, not a suspect."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
 texture = ExtResource("1_r6coi")
@@ -28,6 +34,9 @@ shape = SubResource("CapsuleShape2D_hpmr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5udq3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1786717747]
+position = Vector2(0, -5)
 
 [connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
 [connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]

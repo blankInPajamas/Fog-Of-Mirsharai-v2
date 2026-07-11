@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://nbhgq5db8v55" path="res://scripts/character/npc/villager_3.gd" id="1_n2rnc"]
 [ext_resource type="Texture2D" uid="uid://rnqqbsstsf6m" path="res://assets/ninja/character/Villager2/SeparateAnim/Idle.png" id="1_vc1lt"]
+[ext_resource type="Resource" uid="uid://bxuaxs8b18xf3" path="res://styles/karim.dch" id="2_8wlv5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
 radius = 6.0
@@ -10,9 +11,14 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
 size = Vector2(20, 42)
 
-[node name="villager3" type="CharacterBody2D" unique_id=267873462]
+[node name="villager3_karim" type="CharacterBody2D" unique_id=267873462]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_n2rnc")
+dialogic_character = ExtResource("2_8wlv5")
+char_name = "Karim Master"
+initial_dialogue = "Zahra? Little Zahra, all grown up... in a week like this. I still can't believe it. Rafiq Dadu, gone. I was at the forge till late, alone, hammering out a plough blade for the Hossain family. Didn't hear a thing. This town's never had a night like this before."
+dialogue_lines = Array[String](["You want to know about the money? Fine — yes, I owed him. Owed him plenty, for two years running. Everyone knew it. Go ahead, say what you're thinking. I know how it looks.", "...You found the ledger. Then you already know. He crossed the debt out himself, three weeks back. Said, 'Karim, a man shouldn't carry a stone he's already paid for.' I never even thanked him properly. I've been sitting with that instead of grief, if I'm honest with you."])
+motive = "Owed Rafiq a large debt — appears to be a strong motive, but the debt was forgiven weeks before the murder. Alibi: asleep drunk in the tea stall corner, confirmed by Nasrin."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
 texture = ExtResource("1_vc1lt")
@@ -28,6 +34,9 @@ shape = SubResource("CapsuleShape2D_hpmr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5udq3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=553744509]
+position = Vector2(0, -5)
 
 [connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
 [connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]

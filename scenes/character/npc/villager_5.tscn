@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://duqgclhv47std" path="res://assets/ninja/character/Villager5/SeparateAnim/Idle.png" id="1_6qdcq"]
 [ext_resource type="Script" uid="uid://ds5560tesnuc0" path="res://scripts/character/npc/villager_5.gd" id="1_r6jyb"]
+[ext_resource type="Resource" uid="uid://dkxhnvwmmwh2v" path="res://styles/anwar.dch" id="2_2ahm2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
 radius = 6.0
@@ -10,9 +11,15 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
 size = Vector2(20, 42)
 
-[node name="villager5" type="CharacterBody2D" unique_id=267873462]
+[node name="villager5_anwar" type="CharacterBody2D" unique_id=267873462]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_r6jyb")
+dialogic_character = ExtResource("2_2ahm2")
+char_name = "Anwar Hossain"
+initial_dialogue = "Ah — you must be the famous Zahra everyone's been mentioning. Terrible thing, what happened to the old caretaker. I barely knew him, honestly, I've only been passing through Mirsharai a few weeks, buying handicrafts for my shop in the city. I was actually just about to head out myself — business waits for no one, sadly."
+dialogue_lines = Array[String](["Leaving so soon? Well, yes, I have another town to reach for buying stock. Nothing sinister about a trader keeping to his schedule, Miss Zahra. I'd have thought you'd have bigger concerns than my travel plans.", "..That's not mine. I don't know where you got that, but it's not mine. [His hand tightens slightly around his teacup. He doesn't meet your eyes.] I think this conversation is finished.", "[Long silence.] You've been thorough, I'll give you that. Fine — yes. I heard what that amulet was worth the moment I saw it. The boy let me in, that part wasn't hard, people like him are always easy to convince when they feel forgotten. The old man wasn't supposed to be there. He grabbed my arm, I pulled back, he fell — it happened so fast I barely understood it myself until I was already running. I took it anyway. I'd already ruined everything. What was the point of leaving empty-handed?"])
+culprit = true
+motive = "Learned the Shonali Doa's true value as a rare gold antique and arranged a city buyer in advance. Manipulated Farhan into granting shrine access. Killed Rafiq unintentionally during the struggle when caught mid-theft, then took the amulet regardless and has been preparing to flee town ever since."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
 texture = ExtResource("1_6qdcq")
@@ -28,6 +35,9 @@ shape = SubResource("CapsuleShape2D_hpmr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5udq3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=179083582]
+position = Vector2(13.599999, -4.7683716e-07)
 
 [connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
 [connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]

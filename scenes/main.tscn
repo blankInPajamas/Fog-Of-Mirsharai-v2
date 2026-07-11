@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bqxu5kf2a4blb" path="res://scenes/character/npc/villager_4.tscn" id="18_jscy8"]
 [ext_resource type="PackedScene" uid="uid://dw1ablw25ni6o" path="res://scenes/character/npc/villager_5.tscn" id="19_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://c4l7labmhknb0" path="res://scenes/character/npc/villager_6.tscn" id="20_y6deb"]
+[ext_resource type="PackedScene" uid="uid://5o3wnn1xkvne" path="res://scenes/ui_joystick.tscn" id="21_yc10j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6deb"]
 texture = ExtResource("1_eb6dy")
@@ -2182,7 +2183,6 @@ tile_map_data = PackedByteArray("AAAHAAwAAAAAAAMAAAAIAAwAAAABAAMAAAAJAAwAAAABAAM
 tile_set = SubResource("TileSet_5he1u")
 
 [node name="zahra" parent="." unique_id=267873462 groups=["zahra"] instance=ExtResource("13_trceg")]
-visible = false
 position = Vector2(0, -96.999985)
 scale = Vector2(1.2049414, 1.2049414)
 
@@ -2205,3 +2205,5 @@ position = Vector2(38, -189)
 
 [node name="villager6" parent="npcs" unique_id=1837801101 instance=ExtResource("20_y6deb")]
 position = Vector2(662, 300)
+
+[node name="UI_Joystick" parent="npcs" unique_id=595946383 instance=ExtResource("21_yc10j")]

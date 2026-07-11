@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://dt4snrwen7fcr"]
+
+[ext_resource type="Script" uid="uid://6y51d87os2q" path="res://scripts/guess.gd" id="1_2ukme"]
+[ext_resource type="FontFile" uid="uid://bhwlfqy5pxc2e" path="res://assets/fonts/Market_Deco.ttf" id="1_20trd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ukme"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_btp3j"]
+font = ExtResource("1_20trd")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrofo"]
+font = ExtResource("1_20trd")
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndfjs"]
+bg_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vn2l"]
+bg_color = Color(0.8446136, 0.84461355, 0.84461355, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdpuw"]
+bg_color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_20trd"]
+font = ExtResource("1_20trd")
+font_size = 40
+
+[node name="guess" type="Control" unique_id=1280841844]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ukme")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1231878991]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="interrogate_panel" type="Panel" parent="." unique_id=987123753]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ukme")
+
+[node name="heading_label" type="Label" parent="interrogate_panel" unique_id=1524306674]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -385.0
+offset_top = 65.0
+offset_right = 385.0
+offset_bottom = 155.0
+grow_horizontal = 2
+text = "Interrogate Further"
+label_settings = SubResource("LabelSettings_btp3j")
+
+[node name="points_label" type="Label" parent="interrogate_panel" unique_id=1420414728]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = 172.0
+offset_right = 85.0
+offset_bottom = 195.0
+grow_horizontal = 2
+text = "You have  Points left"
+label_settings = SubResource("LabelSettings_nrofo")
+
+[node name="rows" type="VBoxContainer" parent="interrogate_panel" unique_id=1939010629]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = -105.0
+offset_right = 405.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="col1" type="HBoxContainer" parent="interrogate_panel/rows" unique_id=999290149]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="karim" type="Button" parent="interrogate_panel/rows/col1" unique_id=1770652760]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "KARIM CHACHA"
+
+[node name="imam_yusuf" type="Button" parent="interrogate_panel/rows/col1" unique_id=891077575]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "IMAM YUSUF"
+
+[node name="nasrin" type="Button" parent="interrogate_panel/rows/col1" unique_id=790650748]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "nasrin"
+
+[node name="col2" type="HBoxContainer" parent="interrogate_panel/rows" unique_id=704974482]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="priya" type="Button" parent="interrogate_panel/rows/col2" unique_id=2124125208]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "priya"
+
+[node name="anwar" type="Button" parent="interrogate_panel/rows/col2" unique_id=678297346]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "anwar"
+
+[node name="farhan" type="Button" parent="interrogate_panel/rows/col2" unique_id=350045852]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "Farhan"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="interrogate_panel" unique_id=1505707911]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -575.5
+offset_top = -151.0
+offset_right = 575.5
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="final_label" type="Label" parent="interrogate_panel/HBoxContainer" unique_id=1884860400]
+layout_mode = 2
+text = "ARE YOU READY TO MAKE YOUR FINAL GUESS? "
+label_settings = SubResource("LabelSettings_20trd")
+
+[node name="final_guess" type="Button" parent="interrogate_panel/HBoxContainer" unique_id=1982514233]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.07150071, 0.07150046, 0.0715004, 1)
+theme_override_fonts/font = ExtResource("1_20trd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndfjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vn2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hdpuw")
+text = "Confirm"
+
+[connection signal="pressed" from="interrogate_panel/rows/col1/karim" to="." method="_on_karim_pressed"]
+[connection signal="pressed" from="interrogate_panel/rows/col1/imam_yusuf" to="." method="_on_imam_yusuf_pressed"]
+[connection signal="pressed" from="interrogate_panel/rows/col1/nasrin" to="." method="_on_nasrin_pressed"]
+[connection signal="pressed" from="interrogate_panel/rows/col2/priya" to="." method="_on_priya_pressed"]
+[connection signal="pressed" from="interrogate_panel/rows/col2/anwar" to="." method="_on_anwar_pressed"]
+[connection signal="pressed" from="interrogate_panel/rows/col2/farhan" to="." method="_on_farhan_pressed"]
+[connection signal="pressed" from="interrogate_panel/HBoxContainer/final_guess" to="." method="_on_final_guess_pressed"]

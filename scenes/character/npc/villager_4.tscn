@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3joy2tcb3lq7" path="res://scripts/character/npc/villager_4.gd" id="1_68nkp"]
 [ext_resource type="Texture2D" uid="uid://d7srfhjy8mcy" path="res://assets/ninja/character/Villager4/SeparateAnim/Idle.png" id="1_ceqnu"]
+[ext_resource type="Resource" uid="uid://cmrplla71y44f" path="res://styles/imam_yusuf.dch" id="2_f7xb6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hpmr0"]
 radius = 6.0
@@ -10,9 +11,14 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5udq3"]
 size = Vector2(20, 42)
 
-[node name="villager4" type="CharacterBody2D" unique_id=267873462]
+[node name="villager4_imam_yusuf" type="CharacterBody2D" unique_id=267873462]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_68nkp")
+dialogic_character = ExtResource("2_f7xb6")
+char_name = "Imam Yusuf"
+initial_dialogue = "Peace be upon you, child. A dark day for Mirsharai. Rafiq and I did not always see eye to eye, may Allah forgive us both our stubbornness, but he was a good man. I led prayers late into the night — ask anyone who was there."
+dialogue_lines = Array[String](["You want to know what we argued about? The Shonali Doa. I believed it belonged to the mosque, to all of us — not locked in one family's box. Rafiq disagreed. We argued about it for years. I won't pretend otherwise to spare myself suspicion.", "That ledger page — yes, I know it. Rafiq and I had nearly settled the matter, in fact, the week before he died. He'd written me a letter agreeing to a compromise, the amulet displayed publicly twice a year, blessed by both of us. I have that letter still, if you want to see for yourself that our quarrel was ending, not boiling over."])
+motive = "Ideological disagreement with Rafiq over who should hold the amulet — a plausible motive undercut by a solid alibi (leading late prayers, multiple witnesses) and a nearly-resolved dispute."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710929135]
 texture = ExtResource("1_ceqnu")
@@ -28,6 +34,9 @@ shape = SubResource("CapsuleShape2D_hpmr0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_detection" unique_id=104754834]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_5udq3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=575662294]
+position = Vector2(0, -5)
 
 [connection signal="body_entered" from="interact_detection" to="." method="_on_interact_detection_body_entered"]
 [connection signal="body_exited" from="interact_detection" to="." method="_on_interact_detection_body_exited"]

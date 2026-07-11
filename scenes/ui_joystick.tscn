@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://5o3wnn1xkvne"]
 
+[ext_resource type="Script" uid="uid://byedb36ibbkl0" path="res://scripts/ui_joystick.gd" id="1_f0ebb"]
 [ext_resource type="Texture2D" uid="uid://d24q6iaome0tc" path="res://assets/ui/button_xboxone_dpad_dark_7.png" id="1_rih75"]
 [ext_resource type="Texture2D" uid="uid://bglc2hx5u55i4" path="res://assets/ui/button_xboxone_dpad_light_1.png" id="2_f0ebb"]
 [ext_resource type="Texture2D" uid="uid://bby0e8f3qh612" path="res://assets/ui/button_xboxone_dpad_light_3.png" id="3_3gd4p"]
 [ext_resource type="Texture2D" uid="uid://c6qokc8fk876j" path="res://assets/ui/button_xboxone_dpad_light_4.png" id="4_agh6t"]
 [ext_resource type="Texture2D" uid="uid://bvnh3dp88nuff" path="res://assets/ui/button_xboxone_dpad_light_2.png" id="5_wypkr"]
 [ext_resource type="Texture2D" uid="uid://fp1gmoxqoyp0" path="res://assets/ui/button_xbox_digital_a_10.png" id="6_nld05"]
+[ext_resource type="FontFile" uid="uid://bhwlfqy5pxc2e" path="res://assets/fonts/Market_Deco.ttf" id="8_3gd4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rih75"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0ebb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjp36"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gd4p"]
 
@@ -19,7 +23,19 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nld05"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agh6t"]
+bg_color = Color(0.23753911, 0.23753914, 0.23753902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="UI_Joystick" type="CanvasLayer" unique_id=595946383]
+script = ExtResource("1_f0ebb")
 
 [node name="pad_img" type="Control" parent="." unique_id=344635939]
 layout_mode = 3
@@ -96,7 +112,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="btn_group" unique_id=1853969492]
+[node name="d_up" type="Button" parent="btn_group" unique_id=1853969492]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 371.0
@@ -104,9 +120,10 @@ offset_right = 254.0
 offset_bottom = 521.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fjp36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
 
-[node name="Button2" type="Button" parent="btn_group" unique_id=887784571]
+[node name="d_down" type="Button" parent="btn_group" unique_id=887784571]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 573.0
@@ -114,9 +131,10 @@ offset_right = 254.0
 offset_bottom = 693.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fjp36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
 
-[node name="Button4" type="Button" parent="btn_group" unique_id=883905231]
+[node name="d_right" type="Button" parent="btn_group" unique_id=883905231]
 layout_mode = 0
 offset_left = 254.0
 offset_top = 509.0
@@ -124,9 +142,10 @@ offset_right = 404.0
 offset_bottom = 589.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fjp36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
 
-[node name="Button5" type="Button" parent="btn_group" unique_id=1693479860]
+[node name="d_left" type="Button" parent="btn_group" unique_id=1693479860]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 509.0
@@ -134,9 +153,10 @@ offset_right = 174.0
 offset_bottom = 589.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rih75")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f0ebb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fjp36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3gd4p")
 
-[node name="Button3" type="Button" parent="btn_group" unique_id=846809512]
+[node name="btn_ok" type="Button" parent="btn_group" unique_id=846809512]
 layout_mode = 0
 offset_left = 973.0
 offset_top = 449.0
@@ -144,4 +164,29 @@ offset_right = 1173.0
 offset_bottom = 649.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_agh6t")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wypkr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fjp36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nld05")
+
+[node name="guess_btn" type="Button" parent="btn_group" unique_id=817100944]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 31.0
+offset_right = 1231.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("8_3gd4p")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_agh6t")
+text = "GUESS"
+
+[connection signal="button_down" from="btn_group/d_up" to="." method="_on_d_up_button_down"]
+[connection signal="button_up" from="btn_group/d_up" to="." method="_on_d_up_button_up"]
+[connection signal="button_down" from="btn_group/d_down" to="." method="_on_d_down_button_down"]
+[connection signal="button_up" from="btn_group/d_down" to="." method="_on_d_down_button_up"]
+[connection signal="button_down" from="btn_group/d_right" to="." method="_on_d_right_button_down"]
+[connection signal="button_up" from="btn_group/d_right" to="." method="_on_d_right_button_up"]
+[connection signal="button_down" from="btn_group/d_left" to="." method="_on_d_left_button_down"]
+[connection signal="button_up" from="btn_group/d_left" to="." method="_on_d_left_button_up"]
+[connection signal="button_down" from="btn_group/btn_ok" to="." method="_on_btn_ok_button_down"]
+[connection signal="button_up" from="btn_group/btn_ok" to="." method="_on_btn_ok_button_up"]
+[connection signal="pressed" from="btn_group/guess_btn" to="." method="_on_guess_btn_pressed"]
